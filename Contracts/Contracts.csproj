@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Composition.AttributedModel" Version="9.0.10" />
+    <PackageReference Include="System.Composition.Hosting" Version="9.0.10" />
+    <PackageReference Include="System.Composition.Runtime" Version="9.0.10" />
+    <PackageReference Include="System.Composition.TypedParts" Version="9.0.10" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Composition.AttributedModel" Version="9.0.10" />
+    <PackageReference Include="System.Composition.Hosting" Version="9.0.10" />
+    <PackageReference Include="System.Composition.Runtime" Version="9.0.10" />
+    <PackageReference Include="System.Composition.TypedParts" Version="9.0.10" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Contracts\Contracts.csproj" />
+  </ItemGroup>
+
+	<Target Name="CopyToHostWidgets" AfterTargets="Build">
+		<PropertyGroup>
+			<!-- folder docelowy hosta -->
+			<Dest>$(SolutionDir)DashboardApp\bin\$(Configuration)\$(TargetFramework)\Widgets\</Dest>
+		</PropertyGroup>
+		<MakeDir Directories="$(Dest)" />
+		<Copy SourceFiles="$(TargetPath)" DestinationFolder="$(Dest)" SkipUnchangedFiles="true" />
+	</Target>
+
+</Project>

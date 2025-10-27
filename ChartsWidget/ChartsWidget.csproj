@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Composition.AttributedModel" Version="9.0.10" />
+    <PackageReference Include="System.Composition.Hosting" Version="9.0.10" />
+    <PackageReference Include="System.Composition.Runtime" Version="9.0.10" />
+    <PackageReference Include="System.Composition.TypedParts" Version="9.0.10" />
+  </ItemGroup>
+
+</Project>
