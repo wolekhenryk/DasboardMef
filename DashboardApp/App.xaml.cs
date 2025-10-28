@@ -23,14 +23,12 @@ public partial class App : Application
         base.OnStartup(e);
     }
 
-    // Buduje kontener z DLL-i skopiowanych do ShadowDir
     public static CompositionHost BuildContainer()
     {
         var assemblies = new List<Assembly> { typeof(App).Assembly, typeof(IWidget).Assembly };
 
         foreach (var src in Directory.EnumerateFiles(PluginsDir, "*.dll"))
         {
-            // unikalny folder na kopię – pozwala podmieniać pliki w Widgets
             var dstFolder = Path.Combine(ShadowDir,
                 Path.GetFileNameWithoutExtension(src) + "_" + Guid.NewGuid().ToString("N"));
             Directory.CreateDirectory(dstFolder);

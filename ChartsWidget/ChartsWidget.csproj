@@ -14,4 +14,16 @@
     <PackageReference Include="System.Composition.TypedParts" Version="9.0.10" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Contracts\Contracts.csproj" />
+  </ItemGroup>
+
+	<Target Name="CopyToHostWidgets" AfterTargets="Build">
+		<PropertyGroup>
+			<Dest>$(SolutionDir)DashboardApp\bin\$(Configuration)\$(TargetFramework)\Widgets\</Dest>
+		</PropertyGroup>
+		<MakeDir Directories="$(Dest)" />
+		<Copy SourceFiles="$(TargetPath)" DestinationFolder="$(Dest)" SkipUnchangedFiles="true" />
+	</Target>
+
 </Project>
